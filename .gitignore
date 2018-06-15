@@ -1,4 +1,8 @@
 /node_modules
-./client/node_modules
 ./config
 package-lock.json
+.DS_Store
+
+./client/node_modules
+./client/.DS_Store
+./client/yarn.lock
