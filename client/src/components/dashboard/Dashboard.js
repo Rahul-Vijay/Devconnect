@@ -9,7 +9,6 @@ class Dashboard extends Component {
     this.props.getCurrentProfile();
   }
   render() {
-    const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
 
     let dashboardContent;
@@ -17,7 +16,7 @@ class Dashboard extends Component {
     if (profile === null || loading) {
       dashboardContent = <h1> Loading ... </h1>;
     } else {
-      dashboardContent = <h1>Hello {user}</h1>;
+      dashboardContent = <h1>Hello</h1>;
     }
 
     return (
