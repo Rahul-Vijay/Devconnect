@@ -59,7 +59,7 @@ class Register extends Component {
               <p className="lead text-center">
                 Create your DevConnector account
               </p>
-              <form noValidate onSubmit={this.onSubmit}>
+              <form noValidate autoComplete="off" onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Name"
                   name="name"
@@ -91,7 +91,7 @@ class Register extends Component {
                 <TextFieldGroup
                   placeholder="Confirm Password"
                   name="password2"
-                  type="password2"
+                  type="password"
                   value={this.state.password2}
                   onChange={this.onChange}
                   error={errors.password2}

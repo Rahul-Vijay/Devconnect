@@ -55,7 +55,7 @@ class Login extends Component {
               <p className="lead text-center">
                 Sign in to your DevConnector account
               </p>
-              <form onSubmit={this.onSubmit}>
+              <form autoComplete="off" onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Email address"
                   name="email"
