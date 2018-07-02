@@ -23,15 +23,15 @@ class CommentItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center"> {comment.name} </p>
+            <p className="text-center">{comment.name}</p>
           </div>
           <div className="col-md-10">
-            <p className="lead"> {comment.text} </p>
+            <p className="lead">{comment.text}</p>
             {comment.user === auth.user.id ? (
               <button
-                className="btn btn-danger mr-1"
-                type="button"
                 onClick={this.onDeleteClick.bind(this, postId, comment._id)}
+                type="button"
+                className="btn btn-danger mr-1"
               >
                 <i className="fas fa-times" />
               </button>

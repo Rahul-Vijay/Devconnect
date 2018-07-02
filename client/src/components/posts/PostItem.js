@@ -42,7 +42,7 @@ class PostItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center"> {post.name} </p>
+            <p className="text-center">{post.name}</p>
           </div>
           <div className="col-md-10">
             <p className="lead">{post.text}</p>
@@ -58,10 +58,7 @@ class PostItem extends Component {
                       "text-info": this.findUserLike(post.likes)
                     })}
                   />
-                  <span className="badge badge-light">
-                    {" "}
-                    {post.likes.length}{" "}
-                  </span>
+                  <span className="badge badge-light">{post.likes.length}</span>
                 </button>
                 <button
                   onClick={this.onUnlikeClick.bind(this, post._id)}
@@ -75,9 +72,9 @@ class PostItem extends Component {
                 </Link>
                 {post.user === auth.user.id ? (
                   <button
-                    className="btn btn-danger mr-1"
-                    type="button"
                     onClick={this.onDeleteClick.bind(this, post._id)}
+                    type="button"
+                    className="btn btn-danger mr-1"
                   >
                     <i className="fas fa-times" />
                   </button>
@@ -96,11 +93,11 @@ PostItem.defaultProps = {
 };
 
 PostItem.propTypes = {
-  post: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired,
   deletePost: PropTypes.func.isRequired,
   addLike: PropTypes.func.isRequired,
-  removeLike: PropTypes.func.isRequired
+  removeLike: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

@@ -63,19 +63,18 @@ class AddEducation extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="add-experience">
+      <div className="add-education">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
-                {" "}
-                Go Back{" "}
+                Go Back
               </Link>
-              <h1 className="display-4 text-center"> Add Education </h1>
-              <p className="lead-text-center">
-                Add any School, bootstrap classes attended
+              <h1 className="display-4 text-center">Add Education</h1>
+              <p className="lead text-center">
+                Add any school, bootcamp, etc that you have attended
               </p>
-              <small className="d-block pb-3"> * = required fields </small>
+              <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* School"
@@ -84,7 +83,6 @@ class AddEducation extends Component {
                   onChange={this.onChange}
                   error={errors.school}
                 />
-
                 <TextFieldGroup
                   placeholder="* Degree or Certification"
                   name="degree"
@@ -92,7 +90,6 @@ class AddEducation extends Component {
                   onChange={this.onChange}
                   error={errors.degree}
                 />
-
                 <TextFieldGroup
                   placeholder="* Field of Study"
                   name="fieldofstudy"
@@ -100,8 +97,7 @@ class AddEducation extends Component {
                   onChange={this.onChange}
                   error={errors.fieldofstudy}
                 />
-
-                <h6> From Date </h6>
+                <h6>From Date</h6>
                 <TextFieldGroup
                   name="from"
                   type="date"
@@ -118,7 +114,6 @@ class AddEducation extends Component {
                   error={errors.to}
                   disabled={this.state.disabled ? "disabled" : ""}
                 />
-
                 <div className="form-check mb-4">
                   <input
                     type="checkbox"
@@ -130,20 +125,17 @@ class AddEducation extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    {" "}
-                    Current Job{" "}
+                    Current Job
                   </label>
                 </div>
-
                 <TextAreaFieldGroup
-                  placeholder="Program description"
+                  placeholder="Program Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="Tell us a little about the classes or programs attended"
+                  info="Tell us about the program that you were in"
                 />
-
                 <input
                   type="submit"
                   value="Submit"
@@ -159,9 +151,9 @@ class AddEducation extends Component {
 }
 
 AddEducation.propTypes = {
+  addEducation: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
-  addEducation: PropTypes.func.isRequired
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

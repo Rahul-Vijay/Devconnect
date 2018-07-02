@@ -43,10 +43,11 @@ class PostForm extends Component {
 
   render() {
     const { errors } = this.state;
+
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">Say Something...</div>
+          <div className="card-header bg-info text-white">Say Somthing...</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
@@ -76,8 +77,8 @@ PostForm.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  auth: state.auth
+  auth: state.auth,
+  errors: state.errors
 });
 
 export default connect(mapStateToProps, { addPost })(PostForm);
