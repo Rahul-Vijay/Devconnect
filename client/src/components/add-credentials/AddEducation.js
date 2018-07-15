@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import TextFieldGroup from '../common/TextFieldGroup';
-import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { addEducation } from '../../actions/profileActions';
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import TextFieldGroup from "../common/TextFieldGroup";
+import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addEducation } from "../../actions/profileActions";
 
 class AddEducation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      school: '',
-      degree: '',
-      fieldofstudy: '',
-      from: '',
-      to: '',
+      school: "",
+      degree: "",
+      fieldofstudy: "",
+      from: "",
+      to: "",
       current: false,
-      description: '',
+      description: "",
       errors: {},
       disabled: false
     };
@@ -72,12 +72,12 @@ class AddEducation extends Component {
               </Link>
               <h1 className="display-4 text-center">Add Education</h1>
               <p className="lead text-center">
-                Add any school, bootcamp, etc that you have attended
+                Add any school, college, bootcamp, etc that you have attended
               </p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* School"
+                  placeholder="* School or College"
                   name="school"
                   value={this.state.school}
                   onChange={this.onChange}
@@ -105,29 +105,15 @@ class AddEducation extends Component {
                   onChange={this.onChange}
                   error={errors.from}
                 />
-                <h6>To Date</h6>
+                <h6>Expected graduation or Graduated date</h6>
                 <TextFieldGroup
                   name="to"
                   type="date"
                   value={this.state.to}
                   onChange={this.onChange}
                   error={errors.to}
-                  disabled={this.state.disabled ? 'disabled' : ''}
+                  disabled={this.state.disabled ? "disabled" : ""}
                 />
-                <div className="form-check mb-4">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    name="current"
-                    value={this.state.current}
-                    checked={this.state.current}
-                    onChange={this.onCheck}
-                    id="current"
-                  />
-                  <label htmlFor="current" className="form-check-label">
-                    Current Job
-                  </label>
-                </div>
                 <TextAreaFieldGroup
                   placeholder="Program Description"
                   name="description"
@@ -161,6 +147,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addEducation })(
-  withRouter(AddEducation)
-);
+export default connect(
+  mapStateToProps,
+  { addEducation }
+)(withRouter(AddEducation));
